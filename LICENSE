@@ -1,0 +1,59 @@
+# IKat Code License
+
+Copyright © 2026 the author of IKat Code. All rights reserved.
+
+IKat Code ("the Software") is proprietary software distributed free of charge. By installing or
+using it you accept this license.
+
+## 1. What you may do
+
+1. Install and run the Software on any number of computers you own or control.
+2. Use it for any purpose, personal or commercial, including work for your employer and your
+   clients.
+3. Use it in automated environments you control, such as continuous integration.
+
+## 2. What you may not do
+
+1. Distribute, publish, sell, rent or lend copies of the Software, or make it available for
+   download from anywhere but its official releases page. Pointing people to that page is fine.
+2. Modify the Software, or decompile, disassemble or otherwise reverse engineer it, except where
+   the law where you live allows it despite this license.
+3. Remove or alter its copyright notices, or get around its checks, such as the verification of
+   update signatures.
+4. Use the Software or its parts to build a product that competes with it.
+
+## 3. Your code is yours
+
+Everything the Software writes in your projects at your request — code, tests, documentation and
+other output — belongs to you, as if you had written it yourself. The author claims no rights to
+it. You are responsible for reviewing it before you rely on it.
+
+## 4. Model providers
+
+The Software sends your requests and the parts of your project it works with to the model
+provider you choose (for example OpenAI, Anthropic or Google, or a server you run). That use is
+governed by your agreement with that provider. The author does not receive this data. The
+Software collects no telemetry; checking for updates is a plain request to the releases page.
+
+## 5. No warranty
+
+The Software is provided "as is", without warranty of any kind, express or implied, including
+fitness for a particular purpose and non-infringement. An AI agent can make mistakes, run
+commands you did not expect and change or delete files: keep your work under version control
+and review what it does.
+
+## 6. Limitation of liability
+
+To the extent the law allows, the author is not liable for any damages arising from the use of
+the Software or the inability to use it, including loss of data, profits or business, even if
+advised of the possibility of such damages.
+
+## 7. End of the license
+
+This license ends automatically if you break its terms. You must then stop using the Software and
+delete your copies. Sections 3, 5 and 6 survive its end.
+
+## 8. Changes
+
+A new version of the Software may come with a new version of this license; the version that came
+with the copy you use applies to that copy.
