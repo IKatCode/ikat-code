@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.1
+
+- The model you set up in IKat is the default. Signing in with `ikat login` or saving a key with
+  `ikat login <provider>` now wins over a provider IKat only finds in environment variables that
+  another program left behind. Without either, the order is OpenAI, then Anthropic, then Google.
+- The first-run screen offers an API key first (OpenAI, OpenRouter, Anthropic, Gemini), then the
+  ChatGPT plan, your own endpoint and a local server. Going back returns to the option you came
+  from.
+
+To update, run the install command again.
+
 ## 0.1.0
 
 The first release of IKat Code, a coding agent for your terminal that works with the model you
