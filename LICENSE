@@ -1,9 +1,12 @@
 # IKat Code License
 
-Copyright © 2026 the author of IKat Code. All rights reserved.
+Copyright © 2026 IKatCode. All rights reserved. Contact: ikatcodeofficial@gmail.com.
 
 IKat Code ("the Software") is proprietary software distributed free of charge. By installing or
-using it you accept this license.
+using it you accept this license. "The author" below means IKatCode.
+
+The Software includes open-source components, such as the Bun runtime and the libraries it
+links; they are not covered by this license (see section 3).
 
 ## 1. What you may do
 
@@ -17,43 +20,58 @@ using it you accept this license.
 1. Distribute, publish, sell, rent or lend copies of the Software, or make it available for
    download from anywhere but its official releases page. Pointing people to that page is fine.
 2. Modify the Software, or decompile, disassemble or otherwise reverse engineer it, except where
-   the law where you live allows it despite this license.
+   the law where you live allows it despite this license or section 3 allows it.
 3. Remove or alter its copyright notices, or get around its checks, such as the verification of
    update signatures.
 4. Use the Software or its parts to build a product that competes with it.
 
-## 3. Your code is yours
+## 3. Open-source components
+
+The Software contains components under their own licenses, listed with the full license texts in
+the file THIRD-PARTY-NOTICES that comes with every release. Each of them stays under its own
+license, and nothing in this license limits the rights that license gives you.
+
+In particular, the Software is built with Bun, which links JavaScriptCore and WebKit (GNU Library
+General Public License, version 2) and tinycc (GNU Lesser General Public License, version 2.1)
+into the program. You may modify those libraries and use the Software with your modified version,
+and you may reverse engineer the Software as far as needed to debug such modifications. For that,
+the author provides the Software in object form — the compiled JavaScript that Bun runs, which
+can be used with a rebuilt Bun — free of charge on request to ikatcodeofficial@gmail.com, for at
+least three years after the release of each version. THIRD-PARTY-NOTICES says where the exact
+source of those libraries is.
+
+## 4. Your code is yours
 
 Everything the Software writes in your projects at your request — code, tests, documentation and
 other output — belongs to you, as if you had written it yourself. The author claims no rights to
 it. You are responsible for reviewing it before you rely on it.
 
-## 4. Model providers
+## 5. Model providers
 
 The Software sends your requests and the parts of your project it works with to the model
 provider you choose (for example OpenAI, Anthropic or Google, or a server you run). That use is
 governed by your agreement with that provider. The author does not receive this data. The
-Software collects no telemetry; checking for updates is a plain request to the releases page.
+Software collects no telemetry.
 
-## 5. No warranty
+## 6. No warranty
 
 The Software is provided "as is", without warranty of any kind, express or implied, including
 fitness for a particular purpose and non-infringement. An AI agent can make mistakes, run
 commands you did not expect and change or delete files: keep your work under version control
 and review what it does.
 
-## 6. Limitation of liability
+## 7. Limitation of liability
 
 To the extent the law allows, the author is not liable for any damages arising from the use of
 the Software or the inability to use it, including loss of data, profits or business, even if
 advised of the possibility of such damages.
 
-## 7. End of the license
+## 8. End of the license
 
 This license ends automatically if you break its terms. You must then stop using the Software and
-delete your copies. Sections 3, 5 and 6 survive its end.
+delete your copies. Sections 3, 4, 6 and 7 survive its end.
 
-## 8. Changes
+## 9. Changes
 
 A new version of the Software may come with a new version of this license; the version that came
 with the copy you use applies to that copy.

@@ -3,8 +3,9 @@
 #   curl -fsSL https://github.com/IKatCode/ikat-code/releases/latest/download/install.sh | sh
 #
 # Downloads the release for this computer, checks it against SHA256SUMS and the release
-# signature, puts `ikat` and `rg` into ~/.ikat/bin and that folder onto the PATH. Run again to
-# update. IKAT_VERSION=1.2.3 installs that version; IKAT_INSTALL_DIR another folder.
+# signature, puts `ikat` and `rg` (with their licences) into ~/.ikat/bin and that folder onto the
+# PATH. Run again to update. IKAT_VERSION=1.2.3 installs that version; IKAT_INSTALL_DIR another
+# folder.
 set -eu
 
 REPOSITORY="https://github.com/IKatCode/ikat-code/releases"
@@ -105,10 +106,24 @@ add_to_path() {
   say "Added $1 to the PATH in $profile; open a new terminal, or run: $line"
 }
 
+has_library() {
+  for libdir in /lib /usr/lib /usr/local/lib; do
+    [ -e "$libdir/$1" ] && return 0
+  done
+  return 1
+}
+
 main() {
   base="${IKAT_DOWNLOAD_URL:-$REPOSITORY}"
   platform="${IKAT_TARGET:-}"
   [ -n "$platform" ] || platform=$(target)
+  # The musl build links the C++ runtime dynamically; Alpine does not have it by default.
+  case "$platform" in
+    *-musl)
+      { has_library libstdc++.so.6 && has_library libgcc_s.so.1; } ||
+        fail "IKat needs libstdc++ and libgcc here; install them first (on Alpine: apk add libstdc++ libgcc)"
+      ;;
+  esac
   if [ -n "${IKAT_VERSION:-}" ]; then
     url="$base/download/v${IKAT_VERSION#v}"
   else
@@ -130,7 +145,8 @@ main() {
 
   work=$(mktemp -d)
   trap 'rm -rf "$work"' EXIT INT TERM
-  say "Downloading IKat Code for $platform…"
+  # Braces: the bash of macOS reads the bytes of "…" as part of a bare variable's name.
+  say "Downloading IKat Code for ${platform}…"
   download "$url/$archive" "$work/$archive" || fail "could not download $url/$archive"
   download "$url/SHA256SUMS" "$work/SHA256SUMS" || fail "could not download the checksums"
   download "$url/SHA256SUMS.sig" "$work/SHA256SUMS.sig" || fail "could not download the signature"
@@ -161,13 +177,18 @@ main() {
     chmod 755 "$dir/.$name.new"
     mv -f "$dir/.$name.new" "$dir/$name"
   done
+  # The licences go with the programs.
+  for name in LICENSE THIRD-PARTY-NOTICES; do
+    [ -f "$work/files/$name" ] || continue
+    cp "$work/files/$name" "$dir/$name"
+  done
 
   case ":${PATH}:" in
     *":$dir:"*) ;;
     *) add_to_path "$dir" ;;
   esac
   say "$("$dir/ikat" --version) is installed in $dir."
-  say "Start it in a project folder with: ikat — then sign in to your ChatGPT plan with: ikat login"
+  say "Start it in a project folder with: ikat — the first time it asks how to reach a model."
 }
 
 main "$@"

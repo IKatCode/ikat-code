@@ -121,10 +121,15 @@ function Install-Ikat {
       }
       Copy-Item -Path $source -Destination $target
     }
+    # The licences go with the programs.
+    foreach ($name in @('LICENSE', 'THIRD-PARTY-NOTICES')) {
+      $source = Join-Path $files $name
+      if (Test-Path $source) { Copy-Item -Force -Path $source -Destination (Join-Path $dir $name) }
+    }
     Add-ToPath $dir
     $version = & (Join-Path $dir 'ikat.exe') --version
     Write-Host "$version is installed in $dir."
-    Write-Host 'Start it in a project folder with: ikat - then sign in to your ChatGPT plan with: ikat login'
+    Write-Host 'Start it in a project folder with: ikat - the first time it asks how to reach a model.'
   } finally {
     Remove-Item -Recurse -Force $work -ErrorAction SilentlyContinue
   }
