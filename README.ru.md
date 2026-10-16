@@ -2,6 +2,11 @@
   <a href="README.md">English</a> · <b>Русский</b>
 </p>
 
+<p align="center">
+  <a href="https://github.com/IKatCode/ikat-code/releases"><img alt="Последний релиз" src="https://img.shields.io/github/v/release/IKatCode/ikat-code?include_prereleases&label=release"></a>
+  <img alt="macOS, Linux, Windows" src="https://img.shields.io/badge/macOS%20%C2%B7%20Linux%20%C2%B7%20Windows-x64%20%26%20arm64-555">
+</p>
+
 # IKat Code
 
 Агент для программирования в терминале. Вы говорите, что нужно сделать, IKat читает проект,
@@ -182,6 +187,7 @@ ikat -p "Почини падающий тест в cart.test.ts" --permission-mo
 
 Запустите `ikat doctor`: он проверит терминал, Git, подключение к модели и настройки. Если не
 помогло, [создайте issue](https://github.com/IKatCode/ikat-code/issues) и приложите его вывод.
+О проблеме безопасности сообщайте не публично, а как описано в [SECURITY.md](SECURITY.md).
 
 Интерфейс есть на русском и английском, язык берётся из настроек системы.
 

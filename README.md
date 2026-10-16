@@ -2,6 +2,11 @@
   <b>English</b> · <a href="README.ru.md">Русский</a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/IKatCode/ikat-code/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/IKatCode/ikat-code?include_prereleases&label=release"></a>
+  <img alt="macOS, Linux, Windows" src="https://img.shields.io/badge/macOS%20%C2%B7%20Linux%20%C2%B7%20Windows-x64%20%26%20arm64-555">
+</p>
+
 # IKat Code
 
 A coding agent for the terminal. You say what you need, IKat reads the project, edits the code,
@@ -182,6 +187,7 @@ To remove IKat, delete the folder the installer created (`~/.ikat/bin`, or
 
 Run `ikat doctor`: it checks the terminal, Git, the model connection and your settings. If that
 does not help, [open an issue](https://github.com/IKatCode/ikat-code/issues) with its output.
+A security problem goes privately, as [SECURITY.md](SECURITY.md) describes.
 
 The interface is in English and Russian and follows your system's language.
 

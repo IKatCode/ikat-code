@@ -1,0 +1,15 @@
+name: An idea
+description: Something IKat should do, or do differently. Russian is fine too.
+labels: [idea]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you are trying to do
+      description: The task or situation, and where IKat gets in the way now.
+    validations:
+      required: true
+  - type: textarea
+    id: wish
+    attributes:
+      label: What would help

@@ -1,0 +1,29 @@
+name: Something does not work
+description: A bug, a crash, a wrong answer from a command. Russian is fine too.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what IKat did instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to repeat it
+      description: The command you ran and what you typed. A small project or file that shows it helps a lot.
+  - type: input
+    id: model
+    attributes:
+      label: Model and how it is connected
+      placeholder: gpt-6.1-sol via an OpenAI-compatible gateway; qwen3-coder:30b in Ollama; …
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `ikat doctor`
+      description: It shows the version, the system, the terminal and the model setup. Keys are never printed.
+      render: text
+    validations:
+      required: true
