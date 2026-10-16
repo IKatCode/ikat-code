@@ -5,7 +5,8 @@
   </picture>
 </p>
 
-<p align="center">Агент для программирования в терминале, который работает с той моделью, какую вы выберете.</p>
+<p align="center"><b>Полноценный агент для программирования в терминале. С любой моделью.</b><br>
+Ключи OpenAI и OpenRouter, любой OpenAI-совместимый API или ваша подписка ChatGPT.</p>
 
 <p align="center">
   <a href="https://github.com/IKatCode/ikat-code/releases"><img alt="Последний релиз" src="https://img.shields.io/github/v/release/IKatCode/ikat-code?include_prereleases&label=release"></a>
@@ -61,11 +62,11 @@ arm64).
 
 ## Что он умеет
 
+- Работает на модели, которую выберете вы: ключ OpenAI или OpenRouter, любой OpenAI-совместимый
+  API (DeepSeek, Qwen, шлюз компании, локальный сервер), ключи Anthropic и Google или подписка
+  ChatGPT. `/model` меняет модель посреди разговора.
 - Читает проект, меняет код, запускает ваши тесты и линтеры и рассказывает, что изменил и как это
   проверил.
-- Работает с любым OpenAI-совместимым API: с моделью на вашем компьютере, OpenRouter, шлюзом
-  компании. Подходят и ключи OpenAI, Anthropic и Google, и подписка ChatGPT. `/model` меняет
-  модель посреди разговора.
 - Спрашивает, прежде чем выполнить команду или изменить файл, если вы не скажете иначе. Любое
   изменение можно откатить через `/rewind`.
 - На macOS и Linux держит команды в песочнице.
@@ -74,14 +75,21 @@ arm64).
 
 ## Модели
 
-| Где работает модель | Как подключить |
+| Что у вас есть | Как подключить |
 |---|---|
-| Любой сервер с OpenAI-совместимым API | раздел `providers` в `~/.ikat/settings.json`, пример ниже |
-| Ollama, LM Studio, llama.cpp, vLLM на вашем компьютере | `ikat --model ollama/qwen3-coder:30b`, сервер находится сам |
-| OpenAI, Anthropic, Google, OpenRouter | `ikat login openai` (`anthropic`, `google`, `openrouter`) или обычная переменная `*_API_KEY` |
-| ChatGPT Plus или Pro | `ikat login` и вход в браузере |
+| Ключ OpenAI или OpenRouter | `ikat login openai` или `ikat login openrouter`, либо `OPENAI_API_KEY` / `OPENROUTER_API_KEY` |
+| Любой другой OpenAI-совместимый API | раздел `providers` в `~/.ikat/settings.json`, пример ниже |
+| Подписка ChatGPT Plus или Pro | `ikat login` и вход в браузере |
+| Ключ Anthropic или Google | `ikat login anthropic`, `ikat login google` или `ANTHROPIC_API_KEY` / `GEMINI_API_KEY` |
+| Ollama, LM Studio, llama.cpp, vLLM | `ikat --model ollama/qwen3-coder:30b`; локальный сервер находится сам |
 
-OpenAI-совместимый сервер:
+Любая модель OpenRouter — это один флаг:
+
+```sh
+ikat --model openrouter/qwen/qwen3-coder
+```
+
+Любой другой OpenAI-совместимый API, например собственный адрес провайдера или шлюз компании:
 
 ```json
 {
