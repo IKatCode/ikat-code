@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.0
+
+The first release of IKat Code, a coding agent for your terminal that works with the model you
+choose.
+
+- Connect any OpenAI-compatible API, a model on your machine (Ollama, LM Studio, llama.cpp,
+  vLLM), API keys of OpenAI, Anthropic, Google or OpenRouter, or a ChatGPT plan. `/model` switches
+  models in the middle of a conversation.
+- IKat reads the project, changes the code, runs your tests and linters, and says what it changed
+  and how it checked it.
+- It asks before commands and file changes, in six modes from `readonly` to
+  `bypass-permissions`, which asks nothing. Any change can be rolled back with `/rewind`.
+- Commands run in a sandbox on macOS and Linux.
+- `ikat -p` runs a task in scripts and CI, with JSON output.
+- Builds for macOS, Linux (glibc and musl) and Windows, x64 and arm64.
+
+Install:
+
+```sh
+curl -fsSL https://github.com/IKatCode/ikat-code/releases/latest/download/install.sh | sh
+```
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://github.com/IKatCode/ikat-code/releases/latest/download/install.ps1 | iex"
+```
+
+Since 0.1.0-beta.1 only the version number and the documentation have changed.
+
 ## 0.1.0-beta.1
 
 The first public build of IKat Code, a beta: it works for everyday tasks, and we want to hear

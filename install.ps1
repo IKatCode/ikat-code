@@ -1,5 +1,5 @@
 # Installs IKat Code on Windows (ADR 0027):
-#   irm https://github.com/IKatCode/ikat-code/releases/latest/download/install.ps1 | iex
+#   powershell -ExecutionPolicy ByPass -c "irm https://github.com/IKatCode/ikat-code/releases/latest/download/install.ps1 | iex"
 #
 # Downloads the release for this computer, checks it against SHA256SUMS and the release
 # signature, puts ikat.exe and rg.exe into %LOCALAPPDATA%\ikat\bin and that folder onto the
