@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="324" height="120" viewBox="0 0 324 120" role="img" aria-label="IKat Code">
+<svg xmlns="http://www.w3.org/2000/svg" width="324" height="120" viewBox="0 0 324 120" role="img" aria-label="IKat Code" shape-rendering="crispEdges">
 <rect x="0" y="0" width="12" height="24" fill="#5B4BDB"/>
 <rect x="12" y="0" width="12" height="24" fill="#6A45D5"/>
 <rect x="36" y="0" width="12" height="24" fill="#B797E2" fill-opacity="0.35"/>
