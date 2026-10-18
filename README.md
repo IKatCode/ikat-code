@@ -206,8 +206,19 @@ CI container, `--permission-mode bypass-permissions` lets it run everything.
 
 ## Updating and removing
 
-Run the install command again to update. To remove IKat, delete `~/.ikat/bin` (or
-`%LOCALAPPDATA%\ikat\bin`) and take it out of your PATH; sessions and settings are in `~/.ikat`.
+`ikat update` installs the latest release: it checks the release signature and the checksum, makes
+sure the new `ikat` starts, and only then replaces the old one. `ikat update --check` only tells
+you whether there is a newer version. Versions before 0.1.3 have no `ikat update`: run the install
+command again once.
+
+Once a day IKat asks GitHub what the latest version is, and tells you when a new one is out. That
+request carries nothing about you or your code. To turn it off, set `"updates": { "check": false }`
+in `~/.ikat/settings.json` or `IKAT_NO_UPDATE_CHECK=1`; it is off in CI. With
+`"updates": { "auto": true }` IKat installs new versions by itself, and they start the next time
+you open it.
+
+To remove IKat, delete `~/.ikat/bin` (or `%LOCALAPPDATA%\ikat\bin`) and take it out of your PATH;
+sessions and settings are in `~/.ikat`.
 
 ## Help
 

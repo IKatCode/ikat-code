@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.3
+
+IKat now updates itself.
+
+- `ikat update` installs the latest release. It checks the release signature and the checksum,
+  makes sure the new `ikat` starts, and only then replaces the old one. `ikat update --check`
+  only tells you whether there is a newer version.
+- Once a day IKat asks GitHub what the latest version is and tells you when a new one is out.
+  The request carries nothing about you or your code. Turn it off with
+  `"updates": { "check": false }` in `~/.ikat/settings.json` or `IKAT_NO_UPDATE_CHECK=1`; it is
+  off in CI.
+- With `"updates": { "auto": true }` new versions install by themselves and start the next time
+  you open IKat.
+
+This is the last time you need to run the install command to update: from 0.1.3 on, run
+`ikat update`.
+
 ## 0.1.2
 
 A long session is now easy to read. On a real 24-minute session the transcript went from 295

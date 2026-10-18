@@ -51,7 +51,9 @@ it. You are responsible for reviewing it before you rely on it.
 The Software sends your requests and the parts of your project it works with to the model
 provider you choose (for example OpenAI, Anthropic or Google, or a server you run). That use is
 governed by your agreement with that provider. The author does not receive this data. The
-Software collects no telemetry.
+Software collects no telemetry. To learn of new versions it asks GitHub once a day for the version
+of the latest release; that request carries nothing about you or your projects, and the setting
+`updates.check` or the variable `IKAT_NO_UPDATE_CHECK` turns it off.
 
 ## 6. No warranty
 
