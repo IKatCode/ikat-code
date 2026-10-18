@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.2
+
+A long session is now easy to read. On a real 24-minute session the transcript went from 295
+lines to 174.
+
+- A new file takes one line instead of its first lines, and a change shows at most 10 lines of
+  its diff. Long paths are cut from the start, so the file name stays visible, and the files of
+  the session's scratch folder show as `scratch/<file>`.
+- A command of several lines shows its first line and how many more there are. When a command
+  fails, its preview shows the error that made it fail, not a test runner's `fail 0` line.
+- The task list stays above the input while IKat works, instead of being repeated in the
+  transcript.
+- The working line says what the model is thinking about and how much it has written, and when
+  the response has gone quiet, for how long.
+- A long turn ends with a summary: how long it took, the files changed with lines added and
+  removed, the checks that ran, and the tokens used.
+- When a ChatGPT plan limit is reached, IKat says when it resets.
+- A new start screen; your own messages stand out in the transcript; tool names are colored by
+  what they do; the permission mode sits at the start of the status bar. In a narrow window the
+  status bar drops the key hint first, then the context meter, and keeps the cost.
+- With OpenAI, Gemini and OpenAI-compatible APIs, a response that stops arriving after the model
+  has begun writing is retried after 160 seconds instead of five minutes.
+- In `ikat -p --output-format stream-json`, each `message.completed` event says how the
+  request's time was spent (`timing`), and `usage` counts reasoning tokens where the provider
+  reports them.
+
+To update, run the install command again.
+
 ## 0.1.1
 
 - The model you set up in IKat is the default. Signing in with `ikat login` or saving a key with
