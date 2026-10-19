@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.4
+
+- Ctrl+V pastes in the Windows console. The console hands the key to IKat instead of pasting,
+  so an API key or an address could only be typed by hand. Now Ctrl+V, Ctrl+Shift+V and
+  Shift+Insert read the clipboard on the connect screen, in the input and in
+  `ikat login <provider>`. Where the terminal pastes by itself, nothing changes.
+- Two sessions in one project no longer fail a checkpoint on a slow machine: one waits up to
+  5 seconds for the other's git instead of 0.6.
+
+To update from 0.1.3, run `ikat update`. From an older version, run the install command again.
+
 ## 0.1.3
 
 IKat now updates itself.
